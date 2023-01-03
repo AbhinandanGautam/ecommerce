@@ -37,7 +37,7 @@ function Header() {
                 </div>
 
                 {/* Returns and orders */}
-                <div className="cursor-pointer hover:underline">
+                <div onClick={() => router.push("/orders")} className="cursor-pointer hover:underline">
                     <p>Returns</p>
                     <p className="font-extrabold md:text-sm">& Orders</p>
                 </div>
@@ -52,7 +52,7 @@ function Header() {
         </div>
 
         {/* bottom navbar continer */}
-        <div className="flex items-center space-x-3 p-2 pl-6 bg-amazon_blue-light text-white text-sm">
+        <div className="flex items-center space-x-3 p-2 bg-amazon_blue-light text-white text-sm">
             <p className="cursor-pointer hover:underline flex items-center">
                 <Bars3Icon className="h-6 mr-1" />
                 All

@@ -1,4 +1,4 @@
-import moment from "moment/moment";
+import moment from "moment";
 import { getSession, useSession } from "next-auth/react";
 import db from "../../firebase";
 import Header from "../components/Header";
@@ -6,8 +6,6 @@ import Order from "../components/Order";
 
 function Orders({ orders }) {
   const { data: session } = useSession();
-
-  console.log(orders);
 
   return (
     <div>
@@ -18,7 +16,7 @@ function Orders({ orders }) {
           Yours Orders
         </h1>
 
-        {session ? <h2>x Orders</h2> : <h2>Please sign in to see orders</h2>}
+        {session ? <h2>{orders.length} Orders</h2> : <h2>Please sign in to see orders</h2>}
 
         <div className="mt-5 space-y-4">
           {orders?.map((order) => (
