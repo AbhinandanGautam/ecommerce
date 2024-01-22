@@ -27,7 +27,7 @@ export default function Home({ products }) {
 
 export async function getServerSideProps(context) {
   const session = await getSession(context);
-  const products = await fetch("https://fakestoreapi.com/products").then(
+  const products = await fetch("http://localhost:3000/api/products").then(
     (res) => res.json()
   );
 
